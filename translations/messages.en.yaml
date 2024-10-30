@@ -1,0 +1,9 @@
+application:
+  name: ZOZO
+
+users:
+  user: CC
+  users: ZZZZZ
+
+sonata_admin:
+  title: 'Toto'

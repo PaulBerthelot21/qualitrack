@@ -1,0 +1,9 @@
+application:
+  name: Toto
+
+users:
+  user: Utilisateur
+  users: Utilisateurs
+
+sonata_admin:
+  title: 'Toto'

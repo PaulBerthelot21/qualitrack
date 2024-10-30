@@ -25,3 +25,4 @@
 .idea/php.xml
 .idea/qualitrack.iml
 ### idea ###
+/qodana.yaml

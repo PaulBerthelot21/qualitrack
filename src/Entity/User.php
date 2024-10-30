@@ -19,6 +19,10 @@ class User implements UserInterface
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank]
+    #[ORM\Column(length: 140)]
+    private ?string $login = null;
+
     #[Assert\Email]
     #[ORM\Column(length: 180)]
     private ?string $email = null;
@@ -40,6 +44,18 @@ class User implements UserInterface
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getLogin(): ?string
+    {
+        return $this->login;
+    }
+
+    public function setLogin(string $login): static
+    {
+        $this->login = $login;
+
+        return $this;
     }
 
     public function getEmail(): ?string
@@ -119,5 +135,10 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function __toString(): string
+    {
+        return $this->login ?? '';
     }
 }

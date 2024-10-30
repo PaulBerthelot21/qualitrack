@@ -16,6 +16,13 @@ class UserTest extends TestCase
         $this->assertEquals(1, $user->getId());
     }
 
+    public function testGetSetLogin(): void
+    {
+        $user = new User();
+        $user->setLogin('jdoe');
+        $this->assertEquals('jdoe', $user->getLogin());
+    }
+
     public function testGetSetEmail(): void
     {
         $user = new User();
