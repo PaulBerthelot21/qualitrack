@@ -34,7 +34,7 @@ final class UserAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
-        $filter->add('login');
+        $filter->add('login', null, ['show_filter' => true]);
         $filter->add('firstName');
         $filter->add('lastName');
         $filter->add('email');
@@ -42,10 +42,17 @@ final class UserAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $list): void
     {
-        $list->addIdentifier('login');
+        $list->addIdentifier('login', null, ['route' => ['name' => 'edit']]);
         $list->add('firstName');
         $list->add('lastName');
         $list->add('email');
+        $list->add('_action', 'actions', [
+            'actions' => [
+                'show' => [],
+                'edit' => [],
+                'delete' => [],
+            ]
+        ]);
     }
 
     protected function configureShowFields(ShowMapper $show): void
